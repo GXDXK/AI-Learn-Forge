@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # pagefind
 public/pagefind
+
+# Windows 缓存文件
+Thumbs.db
