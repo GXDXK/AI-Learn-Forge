@@ -1,28 +1,32 @@
 import type { APIRoute } from "astro";
 import satori from "satori";
 import sharp from "sharp";
-import { fontData, experimental_getFontFileURL } from "astro:assets";
-import { getFontPathByWeight } from "@/utils/getFontPathByWeight";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import config from "@/config";
 
-export const GET: APIRoute = async context => {
-  const fonts = fontData["--font-Oplus-Serif"];
-  const regularFontPath = getFontPathByWeight(fonts, 400);
-  const boldFontPath = getFontPathByWeight(fonts, 700);
+// ✅ 在模块顶层同步读取字体，避免预渲染阶段异步 fetch 和实验性 API 的路径问题
+// Satori 对 .woff2 支持有限，强烈建议使用 .ttf 格式
+const regularFontPath = join(process.cwd(), "public", "fonts", "OplusSerif-Regular.ttf");
+const boldFontPath = join(process.cwd(), "public", "fonts", "OplusSerif-Bold.ttf");
 
-  if (regularFontPath === undefined || boldFontPath === undefined) {
-    throw new Error("Cannot find the font path.");
-  }
+let regularData: Buffer;
+let boldData: Buffer;
 
-  const [regularData, boldData] = await Promise.all([
-    fetch(experimental_getFontFileURL(regularFontPath, context.url)).then(res =>
-      res.arrayBuffer()
-    ),
-    fetch(experimental_getFontFileURL(boldFontPath, context.url)).then(res =>
-      res.arrayBuffer()
-    ),
-  ]);
+try {
+  regularData = readFileSync(regularFontPath);
+  boldData = readFileSync(boldFontPath);
+} catch (e) {
+  console.error(`[OG] Failed to read font files.`);
+  console.error(`[OG] CWD: ${process.cwd()}`);
+  console.error(`[OG] Tried: ${regularFontPath}`);
+  console.error(`[OG] Tried: ${boldFontPath}`);
+  throw new Error(
+    `Font files not found. Please ensure .ttf fonts exist in public/fonts/. ${e instanceof Error ? e.message : e}`
+  );
+}
 
+export const GET: APIRoute = async () => {
   const svg = await satori(
     {
       type: "div",
