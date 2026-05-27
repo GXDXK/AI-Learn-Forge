@@ -71,7 +71,7 @@ export default defineConfig({
           {
             weight: "300 700",
             style: "normal",
-            src: ["./src/assets/fonts/Oplus-Serif/Oplus-Serif.ttf"],
+            src: ["./src/assets/fonts/Oplus-Serif.ttf"],
           },
         ],
       },
