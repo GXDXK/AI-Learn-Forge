@@ -9,6 +9,8 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -27,14 +29,19 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-CN", "en"],
+    defaultLocale: "zh-CN",
     routing: {
       prefixDefaultLocale: false,
     },
   },
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [
+      remarkMath,
+      remarkToc,
+      [remarkCollapse, { test: "Table of contents" }],
+    ],
+    rehypePlugins: [rehypeKatex],
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },
       defaultColor: false,
@@ -49,16 +56,25 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: ["play.852741963.xyz"],
+    },
   },
   fonts: [
     {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
+      name: "Oplus-Serif",
+      cssVariable: "--font-Oplus-Serif",
+      provider: fontProviders.local(),
+      fallbacks: ["serif", "Times New Roman", "Georgia", "STSong", "SimSun"],
+      options: {
+        variants: [
+          {
+            weight: "300 700",
+            style: "normal",
+            src: ["./public/fonts/Oplus-Serif/Oplus-Serif.woff2"],
+          },
+        ],
+      },
     },
   ],
   env: {

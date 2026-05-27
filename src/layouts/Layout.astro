@@ -46,7 +46,7 @@ const rssHref = getRelativeLocaleUrl(
 
     <!-- Font -->
     <Font
-      cssVariable="--font-google-sans-code"
+      cssVariable="--font-Oplus-Serif"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}
     />
 
@@ -64,6 +64,11 @@ const rssHref = getRelativeLocaleUrl(
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+    />
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />

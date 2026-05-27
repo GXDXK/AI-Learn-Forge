@@ -1,37 +1,32 @@
 ---
-title: "About"
-description: "A bit about me and this blog."
+title: "关于智学工坊"
+description: "关于智学工坊"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+智学工坊（AI-Learn Forge）是智汇团队倾力打造的**一站式AI工具学习解决方案平台**，专注服务高校学生群体，提供从AI基础入门到专业实战的全链路学习服务，让AI真正成为学生升学、就业、学术研究的核心生产力工具。
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+## 网站建立目的
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+在AI全面融入学习与职场的浪潮下，高校学生面临**AI应用能力薄弱、自学碎片化、专业场景适配难、环境配置繁琐**等核心困境。
+我们建立智学工坊，旨在：
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+1. 搭建**系统化、阶梯式**的AI工具学习体系，解决学生“想学却无从下手”的迷茫；
+2. 聚焦网页设计、仿真搭建、文献分析、软件开发等真实专业场景，让AI工具落地可用；
+3. 降低优质AI学习资源的获取门槛，帮助学生快速掌握AI核心技能，提升就业与升学竞争力。
 
-## Features
+## 收费说明
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+平台坚持**普惠、高性价比、按需付费**原则，兼顾学生消费能力与服务质量：
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+1. 电子教程：采用**免费+低价增值**模式，基础内容免费开放，进阶教程低价获取；
+2. 系统课程：定价适中，提供录播课+实战项目，支持免费试听，配套完整学习资料；
+3. 电脑配置服务：一对一远程指导，定价略高于市场平均水平，保障专属服务效果；
+4. 会员体系：首月包月低至5元，畅享课程、教程、部署服务等多项权益。
 
-and so much more.
+![关于-定价](/images/blog/关于-定价.jpg)
 
-## Show your support
+## 未来展望
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+- 短期（3-6个月）：完成平台上线与核心课程迭代，多渠道积累种子用户，夯实内容基础；
+- 中期（1-2年）：升级社区互动功能，发布移动端APP，打造沉浸式AI学习社区；
+- 长期（3-5年）：联动高校、名企建立AI技能认证体系，打通学习-实践-就业闭环，成为国内高校学生AI工具学习的标杆平台。
